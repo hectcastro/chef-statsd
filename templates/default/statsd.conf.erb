@@ -1,0 +1,11 @@
+description "statsd"
+author "Chef"
+
+start on startup
+stop on shutdown
+
+script
+    export HOME="/root"
+
+    exec sudo -u statsd /usr/share/statsd/scripts/start
+end script

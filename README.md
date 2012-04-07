@@ -20,6 +20,7 @@ Installs and configures StatsD.
 * `node["statsd"]["repository"]` - Reference to a StatsD repository.
 * `node["statsd"]["log_file"]` - Path to the StatsD log file.
 * `node["statsd"]["flush_interval"]` - Flush interval in milliseconds.
+* `node["statsd"]["address"]` - Address to bind StatsD to.
 * `node["statsd"]["port"]` - Port to run StatsD on.
 * `node["statsd"]["graphite_host"]` - Graphite host.
 * `node["statsd"]["graphite_port"]` - Graphite port.

@@ -14,6 +14,7 @@ template "#{node["statsd"]["conf_dir"]}/config.js" do
   mode "0644"
   source "config.js.erb"
   variables(
+    :address        => node["statsd"]["address"],
     :port           => node["statsd"]["port"],
     :flush_interval => node["statsd"]["flush_interval"],
     :graphite_port  => node["statsd"]["graphite_port"],

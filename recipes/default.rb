@@ -23,21 +23,12 @@ template "#{node["statsd"]["conf_dir"]}/config.js" do
   notifies :restart, "service[statsd]"
 end
 
-directory "#{node["statsd"]["dir"]}/scripts" do
-  action :create
-end
-
-template "#{node["statsd"]["dir"]}/scripts/start" do
-  source "start.erb"
-  mode 0755
-  variables(
-    :log_file => node["statsd"]["log_file"]
-  )
-end
-
 template "/etc/init/statsd.conf" do
   mode "0644"
   source "statsd.conf.erb"
+  variables(
+    :log_file => node["statsd"]["log_file"]
+  )
 end
 
 user "statsd" do

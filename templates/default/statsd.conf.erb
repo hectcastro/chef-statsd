@@ -1,11 +1,12 @@
-description "statsd"
+description "StatsD"
 author "Chef"
 
-start on startup
-stop on shutdown
+start on runlevel [2345]
+stop on runlevel [!2345]
 
-script
-    export HOME="/root"
+respawn
+expect daemon
 
-    exec sudo -u statsd /usr/share/statsd/scripts/start
-end script
+exec start-stop-daemon --start --oknodo --chdir /usr/share/statsd --user statsd --chuid statsd --name statsd --startas /usr/local/bin/node --background -- /usr/share/statsd/stats.js /etc/statsd/config.js 2>&1 >> <%= @log_file %>
+
+emits statsd-running

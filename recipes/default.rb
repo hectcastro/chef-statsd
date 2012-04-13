@@ -1,5 +1,6 @@
 include_recipe "git"
 include_recipe "nodejs"
+include_recipe "logrotate"
 
 git node["statsd"]["dir"] do
   repository node["statsd"]["repository"]
@@ -39,6 +40,14 @@ end
 file node["statsd"]["log_file"] do
   owner "statsd"
   action :create
+end
+
+logrotate_app "statsd" do
+  cookbook "logrotate"
+  path node["statsd"]["log_file"]
+  frequency "daily"
+  rotate 7
+  create "644 root root"
 end
 
 service "statsd" do

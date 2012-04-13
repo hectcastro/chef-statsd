@@ -11,6 +11,7 @@ Installs and configures StatsD.
 ## Cookbooks ##
 
 * git
+* logrotate
 * nodejs
 
 # Attributes #

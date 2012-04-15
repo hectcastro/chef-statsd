@@ -5,6 +5,7 @@ include_recipe "logrotate"
 git node["statsd"]["dir"] do
   repository node["statsd"]["repository"]
   action :sync
+  notifies :restart, "service[statsd]"
 end
 
 directory node["statsd"]["conf_dir"] do

@@ -7,6 +7,7 @@ Installs and configures StatsD.
 ## Platforms ##
 
 * Ubuntu 11.10 (Oneiric)
+* Ubuntu 12.04 (Precise)
 
 ## Cookbooks ##
 

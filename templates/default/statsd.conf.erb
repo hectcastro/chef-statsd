@@ -1,12 +1,17 @@
 description "StatsD"
 author "Chef"
 
-start on runlevel [2345]
+start on (filesystem and net-device-up)
 stop on runlevel [!2345]
 
 respawn
-expect daemon
+respawn limit 5 30
 
-exec start-stop-daemon --start --oknodo --chdir /usr/share/statsd --user statsd --chuid statsd --name statsd --startas /usr/local/bin/node --background -- /usr/share/statsd/stats.js /etc/statsd/config.js 2>&1 >> <%= @log_file %>
+chdir /usr/share/statsd
+setuid statsd
+
+script
+  exec /usr/local/bin/node /usr/share/statsd/stats.js /etc/statsd/config.js 2>&1 >> <%= @log_file %>
+end script
 
 emits statsd-running

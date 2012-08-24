@@ -29,7 +29,8 @@ template "/etc/init/statsd.conf" do
   mode "0644"
   source "statsd.conf.erb"
   variables(
-    :log_file => node["statsd"]["log_file"]
+    :log_file         => node["statsd"]["log_file"],
+    :platform_version => node["platform_version"].to_f
   )
 end
 

@@ -8,12 +8,12 @@ respawn
 respawn limit 5 30
 
 chdir /usr/share/statsd
-<% unless node['platform_version'].to_f < 11.10 -%>
+<% unless @platform_version < 11.10 -%>
 setuid statsd
 <% end %>
 
 script
-<% if node['platform_version'].to_f < 11.10 -%>
+<% if @platform_version < 11.10 -%>
   exec start-stop-daemon --start --chuid statsd --exec /usr/local/bin/node /usr/share/statsd/stats.js /etc/statsd/config.js 2>&1 >> <%= @log_file %>
 <% else -%>
   exec /usr/local/bin/node /usr/share/statsd/stats.js /etc/statsd/config.js 2>&1 >> <%= @log_file %>

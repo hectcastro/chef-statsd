@@ -14,9 +14,9 @@ setuid statsd
 
 script
 <% if @platform_version < 11.10 -%>
-  exec start-stop-daemon --start --chuid statsd --exec /usr/local/bin/node /usr/share/statsd/stats.js /etc/statsd/config.js 2>&1 >> <%= @log_file %>
+  exec start-stop-daemon --start --chuid statsd --exec node /usr/share/statsd/stats.js /etc/statsd/config.js 2>&1 >> <%= @log_file %>
 <% else -%>
-  exec /usr/local/bin/node /usr/share/statsd/stats.js /etc/statsd/config.js 2>&1 >> <%= @log_file %>
+  exec node /usr/share/statsd/stats.js /etc/statsd/config.js 2>&1 >> <%= @log_file %>
 <% end -%>
 end script
 

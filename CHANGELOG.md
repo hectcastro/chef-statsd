@@ -1,3 +1,7 @@
+## v0.0.7
+
+* Fixed order of shell redirection to ensure that `STDERR` flows to log file.
+
 ## v0.0.6
 
 * Added init script support for Ubuntu 10.04 and Upstart 0.6.5.

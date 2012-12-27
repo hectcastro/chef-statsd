@@ -38,7 +38,7 @@ when "debian"
   end
 when "rhel","fedora"
   template "/etc/init.d/statsd" do
-    mode "0700"
+    mode "0755"
     source "statsd.erb"
     variables(
       :log_file         => node["statsd"]["log_file"],

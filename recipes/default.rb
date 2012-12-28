@@ -25,13 +25,26 @@ template "#{node["statsd"]["conf_dir"]}/config.js" do
   notifies :restart, "service[statsd]"
 end
 
-template "/etc/init/statsd.conf" do
-  mode "0644"
-  source "statsd.conf.erb"
-  variables(
-    :log_file         => node["statsd"]["log_file"],
-    :platform_version => node["platform_version"].to_f
-  )
+
+case node["platform_family"]
+when "debian"
+  template "/etc/init/statsd.conf" do
+    mode "0644"
+    source "statsd.conf.erb"
+    variables(
+      :log_file         => node["statsd"]["log_file"],
+      :platform_version => node["platform_version"].to_f
+    )
+  end
+when "rhel","fedora"
+  template "/etc/init.d/statsd" do
+    mode "0755"
+    source "statsd.erb"
+    variables(
+      :log_file         => node["statsd"]["log_file"],
+    )
+    supports :start => true, :stop => true, :restart => true, :status => true
+  end
 end
 
 user "statsd" do
@@ -53,6 +66,11 @@ logrotate_app "statsd" do
 end
 
 service "statsd" do
-  provider Chef::Provider::Service::Upstart
+  case node["platform"]
+  when "ubuntu"
+    if node["platform_version"].to_f >= 9.10
+      provider Chef::Provider::Service::Upstart
+    end
+  end
   action [ :enable, :start ]
 end

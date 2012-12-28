@@ -2,7 +2,7 @@ maintainer        "Hector Castro"
 maintainer_email  "hectcastro@gmail.com"
 license           "Apache 2.0"
 description       "Installs and configures StatsD."
-version           "0.0.7"
+version           "0.0.8"
 recipe            "statsd", "Installs and configures StatsD"
 name              "statsd"
 
@@ -11,6 +11,6 @@ name              "statsd"
 end
 
 %w{ ubuntu rhel scientific redhat centos amazon}.each do |os|
-    supports os
+  supports os
 end
 

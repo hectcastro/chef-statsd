@@ -43,7 +43,6 @@ when "rhel","fedora"
     variables(
       :log_file         => node["statsd"]["log_file"],
     )
-    supports :start => true, :stop => true, :restart => true, :status => true
   end
 end
 
@@ -71,6 +70,8 @@ service "statsd" do
     if node["platform_version"].to_f >= 9.10
       provider Chef::Provider::Service::Upstart
     end
+    #restart_command "sudo service statsd stop && sudo service statsd start"
   end
   action [ :enable, :start ]
+  supports :start => true, :stop => true, :restart => true, :status => true
 end

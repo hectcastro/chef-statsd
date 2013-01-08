@@ -1,3 +1,7 @@
+## v0.0.9
+
+* Fixed service resource restart support.
+
 ## v0.0.8
 
 * Added support for RHEL.

@@ -1,3 +1,7 @@
+## v0.0.10
+
+* Removed trailing comma that was causing issues with Chef 10.18.2.
+
 ## v0.0.9
 
 * Fixed service resource restart support.

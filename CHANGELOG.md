@@ -1,6 +1,6 @@
 ## v0.0.10
 
-* Removed trailing comma that was causing issues with Chef 10.18.2.
+* Removed trailing comma that was causing issues with Chef on Ruby 1.8.7.
 
 ## v0.0.9
 

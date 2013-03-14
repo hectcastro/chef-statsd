@@ -53,8 +53,7 @@ start() {
 
 stop() {
     echo -n $"Stopping $NAME daemon: "
-    pid=$(ps aux | grep stats.js | grep nodejs | awk '{print $2}')
-    kill $pid
+    kill $(ps aux | grep stats.js | grep statsd | awk '{print $2}')
     RETVAL=$?
     if [ $RETVAL -eq 0 ]; then
         rm -f /var/lock/subsys/$NAME

@@ -1,3 +1,7 @@
+## v0.1.0
+
+* Fixed issues with stopping statsd service via init.d.
+
 ## v0.0.10
 
 * Removed trailing comma that was causing issues with Chef on Ruby 1.8.7.

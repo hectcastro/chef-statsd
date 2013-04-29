@@ -41,7 +41,8 @@ when "rhel","fedora"
     mode "0755"
     source "statsd.erb"
     variables(
-      :log_file         => node["statsd"]["log_file"]
+      :log_file         => node["statsd"]["log_file"],
+      :node_dir         => node["statsd"]["dir"]
     )
   end
 end

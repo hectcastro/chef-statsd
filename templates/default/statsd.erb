@@ -21,7 +21,7 @@
 . /etc/rc.d/init.d/functions
 
 NAME=statsd
-INSTALL_DIR=/usr/share/$NAME
+INSTALL_DIR=<%= @node_dir %>
 NODE_EXE=/usr/local/bin/node
 
 [ -x $NODE_EXE ] || exit 0

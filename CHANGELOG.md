@@ -1,5 +1,10 @@
 ## v0.1.0
 
+* Fixed hardcoded StatsD path in RHEL init script.
+* Added test-kitchen support.
+
+## v0.1.0
+
 * Fixed issues with stopping statsd service via init.d.
 
 ## v0.0.10

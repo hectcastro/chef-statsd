@@ -20,7 +20,8 @@ template "#{node["statsd"]["conf_dir"]}/config.js" do
     :port           => node["statsd"]["port"],
     :flush_interval => node["statsd"]["flush_interval"],
     :graphite_port  => node["statsd"]["graphite_port"],
-    :graphite_host  => node["statsd"]["graphite_host"]
+    :graphite_host  => node["statsd"]["graphite_host"],
+    :legacy_namespace => node["statsd"]["graphite"]["legacy_namespace"]
   )
   notifies :restart, "service[statsd]"
 end

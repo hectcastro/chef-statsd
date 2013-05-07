@@ -1,3 +1,7 @@
+## v0.1.1
+
+* Added a legacyNamespace attribute for metric namespacing.
+
 ## v0.1.0
 
 * Fixed hardcoded StatsD path in RHEL init script.

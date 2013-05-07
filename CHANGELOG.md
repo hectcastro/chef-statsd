@@ -1,3 +1,7 @@
+## v0.1.2
+
+* Added the rest of the namespacing attributes. See: https://github.com/etsy/statsd/blob/master/docs/namespacing.md
+
 ## v0.1.1
 
 * Added a legacyNamespace attribute for metric namespacing.

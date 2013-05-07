@@ -10,8 +10,8 @@ default["statsd"]["graphite_port"]                = 2003
 
 # Graphite storage config
 default["statsd"]["graphite"]["legacy_namespace"] = true
-default["statsd"]["graphite"]["global_prefix"] = "stats"
-default["statsd"]["graphite"]["prefix_counter"] = "counters"
-default["statsd"]["graphite"]["prefix_timer"] = "timers"
-default["statsd"]["graphite"]["prefix_gauge"] = "gauges"
-default["statsd"]["graphite"]["prefix_set"] = "sets"
+default["statsd"]["graphite"]["global_prefix"]    = "stats"
+default["statsd"]["graphite"]["prefix_counter"]   = "counters"
+default["statsd"]["graphite"]["prefix_timer"]     = "timers"
+default["statsd"]["graphite"]["prefix_gauge"]     = "gauges"
+default["statsd"]["graphite"]["prefix_set"]       = "sets"

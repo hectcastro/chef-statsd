@@ -31,6 +31,16 @@ Installs and configures StatsD.
 * `node["statsd"]["graphite_port"]` - Graphite port.
 * `node["statsd"]["graphite"]["legacy_namespace"]` - Flag to use legacy
   namespace (default: `true`).
+* `node["statsd"]["graphite"]["global_prefix"]` - Global prefix to use for
+  sending stats to Graphite (default: `stats`).
+* `node["statsd"]["graphite"]["prefix_counter"]` - Graphite prefix for counter
+  metrics (default: `counters`).
+* `node["statsd"]["graphite"]["prefix_timer"]` - Graphite prefix for timer
+  metrics (default: `timers`).
+* `node["statsd"]["graphite"]["prefix_gauge"]` - Graphite prefix for gauge
+  metrics (default: `gauges`).
+* `node["statsd"]["graphite"]["prefix_set"]` - Graphite prefix for set
+  metrics (default: `sets`).
 
 ## Recipes
 

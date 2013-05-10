@@ -1,3 +1,7 @@
+## v0.1.3
+
+* Fixed hardcoded StatsD path in Upstart script.
+
 ## v0.1.2
 
 * Added the rest of the namespacing attributes. See: https://github.com/etsy/statsd/blob/master/docs/namespacing.md

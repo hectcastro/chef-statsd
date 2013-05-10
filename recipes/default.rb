@@ -21,6 +21,8 @@ template "#{node["statsd"]["conf_dir"]}/config.js" do
     :flush_interval   => node["statsd"]["flush_interval"],
     :graphite_port    => node["statsd"]["graphite_port"],
     :graphite_host    => node["statsd"]["graphite_host"],
+    :delete_gauge     => node["statsd"]["delete_gauge"],
+    :delete_timers    => node["statsd"]["delete_timers"],
     :legacy_namespace => node["statsd"]["graphite"]["legacy_namespace"],
     :global_prefix    => node["statsd"]["graphite"]["global_prefix"],
     :prefix_counter   => node["statsd"]["graphite"]["prefix_counter"],

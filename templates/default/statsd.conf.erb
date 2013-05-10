@@ -7,16 +7,16 @@ stop on runlevel [!2345]
 respawn
 respawn limit 5 30
 
-chdir /usr/share/statsd
+chdir <%= @node['statsd']['dir'] %>
 <% unless @platform_version < 11.10 -%>
 setuid statsd
 <% end %>
 
 script
 <% if @platform_version < 11.10 -%>
-  exec start-stop-daemon --start --chuid statsd --exec node /usr/share/statsd/stats.js /etc/statsd/config.js >> <%= @log_file %> 2>&1
+    exec start-stop-daemon --start --chuid statsd --exec node <%= @node['statsd']['dir'] %>/stats.js <%= @node['statsd']['conf_dir'] %>/config.js >> <%= @log_file %> 2>&1
 <% else -%>
-  exec node /usr/share/statsd/stats.js /etc/statsd/config.js >> <%= @log_file %> 2>&1
+    exec node <%= @node['statsd']['dir'] %>/stats.js <%= @node['statsd']['conf_dir'] %>/config.js >> <%= @log_file %> 2>&1
 <% end -%>
 end script
 

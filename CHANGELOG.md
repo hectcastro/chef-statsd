@@ -1,3 +1,7 @@
+## v0.1.4
+
+* Added `deleteGauges` and `deleteTimers` options to StatsD configuration
+
 ## v0.1.3
 
 * Fixed hardcoded StatsD path in Upstart script.

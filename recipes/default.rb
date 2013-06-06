@@ -1,6 +1,5 @@
 include_recipe "git"
 include_recipe "nodejs"
-include_recipe "logrotate"
 include_recipe "runit"
 
 git node["statsd"]["dir"] do
@@ -37,14 +36,6 @@ end
 user "#{node['statsd']['username']}" do
   system true
   shell "/bin/false"
-end
-
-logrotate_app "statsd" do
-  cookbook "logrotate"
-  path node["statsd"]["log_file"]
-  frequency "daily"
-  rotate 7
-  create "644 root root"
 end
 
 runit_service "statsd" do

@@ -6,7 +6,7 @@ version           "0.1.4"
 recipe            "statsd", "Installs and configures StatsD"
 name              "statsd"
 
-%w{ git logrotate nodejs }.each do |d|
+%w{ git logrotate nodejs runit }.each do |d|
   depends d
 end
 

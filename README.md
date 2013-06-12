@@ -33,6 +33,8 @@ Installs and configures StatsD.
   inactive timers (default: `false`).
 * `node["statsd"]["delete_gauges"]` - Don't send values to graphite for
   inactive gauges (default: `false`).
+* `node["statsd"]["username"]` - Will be used for process supervision (default: `stasd` )
+
 * `node["statsd"]["graphite"]["legacy_namespace"]` - Flag to use legacy
   namespace (default: `true`).
 * `node["statsd"]["graphite"]["global_prefix"]` - Global prefix to use for

@@ -2,7 +2,7 @@ maintainer        "Hector Castro"
 maintainer_email  "hectcastro@gmail.com"
 license           "Apache 2.0"
 description       "Installs and configures StatsD."
-version           "0.1.4"
+version           "1.0.0"
 recipe            "statsd", "Installs and configures StatsD"
 name              "statsd"
 

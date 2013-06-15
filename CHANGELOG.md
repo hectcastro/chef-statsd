@@ -1,3 +1,9 @@
+## v1.0.0
+
+* Switched to runit for uniform init support across Debian + RHEL
+* Fixed FC002
+* Added Test Kitchen support
+
 ## v0.1.4
 
 * Added `deleteGauges` and `deleteTimers` options to StatsD configuration

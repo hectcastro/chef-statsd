@@ -33,7 +33,7 @@ template "#{node["statsd"]["conf_dir"]}/config.js" do
   notifies :restart, "runit_service[statsd]"
 end
 
-user "#{node['statsd']['username']}" do
+user node["statsd"]["username"] do
   system true
   shell "/bin/false"
 end

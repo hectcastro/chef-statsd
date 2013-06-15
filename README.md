@@ -10,7 +10,8 @@ Installs and configures StatsD.
 
 * Ubuntu 11.10 (Oneiric)
 * Ubuntu 12.04 (Precise)
-* CentOS 6.3 (Final)
+* CentOS 6.3
+* CentOS 6.4
 
 ### Cookbooks
 

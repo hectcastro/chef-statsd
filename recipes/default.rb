@@ -12,6 +12,16 @@ directory node["statsd"]["conf_dir"] do
   action :create
 end
 
+graphite_host = node['statsd']['graphite_host']
+
+unless Chef::Config[:solo]
+  graphite_results = search(:node, node['statsd']['graphite_query'])
+
+  unless graphite_results.empty?
+    graphite_host = graphite_results[0]['ipaddress']
+  end
+end
+
 template "#{node["statsd"]["conf_dir"]}/config.js" do
   mode "0644"
   source "config.js.erb"
@@ -20,7 +30,7 @@ template "#{node["statsd"]["conf_dir"]}/config.js" do
     :port             => node["statsd"]["port"],
     :flush_interval   => node["statsd"]["flush_interval"],
     :graphite_port    => node["statsd"]["graphite_port"],
-    :graphite_host    => node["statsd"]["graphite_host"],
+    :graphite_host    => graphite_host,
     :delete_gauges    => node["statsd"]["delete_gauges"],
     :delete_timers    => node["statsd"]["delete_timers"],
     :legacy_namespace => node["statsd"]["graphite"]["legacy_namespace"],

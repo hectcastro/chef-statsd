@@ -30,6 +30,8 @@ Installs and configures StatsD.
 * `node["statsd"]["port"]` - Port to run StatsD on.
 * `node["statsd"]["graphite_host"]` - Graphite host.
 * `node["statsd"]["graphite_port"]` - Graphite port.
+* `node["statsd"]["graphite_role"]` - Graphite role for automatic discovery.
+* `node["statsd"]["graphite_query"]` - Graphite query for automatic discovery.
 * `node["statsd"]["delete_idle_stats"]` - Don't send values to graphite for
   inactive stats (default: `false`).
 * `node["statsd"]["delete_timers"]` - Don't send values to graphite for

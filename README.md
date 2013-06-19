@@ -30,10 +30,16 @@ Installs and configures StatsD.
 * `node["statsd"]["port"]` - Port to run StatsD on.
 * `node["statsd"]["graphite_host"]` - Graphite host.
 * `node["statsd"]["graphite_port"]` - Graphite port.
+* `node["statsd"]["delete_idle_stats"]` - Don't send values to graphite for
+  inactive stats (default: `false`).
 * `node["statsd"]["delete_timers"]` - Don't send values to graphite for
   inactive timers (default: `false`).
 * `node["statsd"]["delete_gauges"]` - Don't send values to graphite for
   inactive gauges (default: `false`).
+* `node["statsd"]["delete_sets"]` - Don't send values to graphite for
+  inactive sets (default: `false`).
+* `node["statsd"]["delete_counters"]` - Don't send values to graphite for
+  inactive counters (default: `false`).
 * `node["statsd"]["username"]` - Will be used for process supervision (default: `stasd` )
 
 * `node["statsd"]["graphite"]["legacy_namespace"]` - Flag to use legacy

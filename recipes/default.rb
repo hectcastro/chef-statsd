@@ -16,19 +16,22 @@ template "#{node["statsd"]["conf_dir"]}/config.js" do
   mode "0644"
   source "config.js.erb"
   variables(
-    :address          => node["statsd"]["address"],
-    :port             => node["statsd"]["port"],
-    :flush_interval   => node["statsd"]["flush_interval"],
-    :graphite_port    => node["statsd"]["graphite_port"],
-    :graphite_host    => node["statsd"]["graphite_host"],
-    :delete_gauges    => node["statsd"]["delete_gauges"],
-    :delete_timers    => node["statsd"]["delete_timers"],
-    :legacy_namespace => node["statsd"]["graphite"]["legacy_namespace"],
-    :global_prefix    => node["statsd"]["graphite"]["global_prefix"],
-    :prefix_counter   => node["statsd"]["graphite"]["prefix_counter"],
-    :prefix_timer     => node["statsd"]["graphite"]["prefix_timer"],
-    :prefix_gauge     => node["statsd"]["graphite"]["prefix_gauge"],
-    :prefix_set       => node["statsd"]["graphite"]["prefix_set"]
+    :address            => node["statsd"]["address"],
+    :port               => node["statsd"]["port"],
+    :flush_interval     => node["statsd"]["flush_interval"],
+    :graphite_port      => node["statsd"]["graphite_port"],
+    :graphite_host      => node["statsd"]["graphite_host"],
+    :delete_idle_stats  => node["statsd"]["delete_idle_stats"],
+    :delete_gauges      => node["statsd"]["delete_gauges"],
+    :delete_timers      => node["statsd"]["delete_timers"],
+    :delete_sets        => node["statsd"]["delete_sets"],
+    :delete_counters    => node["statsd"]["delete_counters"],
+    :legacy_namespace   => node["statsd"]["graphite"]["legacy_namespace"],
+    :global_prefix      => node["statsd"]["graphite"]["global_prefix"],
+    :prefix_counter     => node["statsd"]["graphite"]["prefix_counter"],
+    :prefix_timer       => node["statsd"]["graphite"]["prefix_timer"],
+    :prefix_gauge       => node["statsd"]["graphite"]["prefix_gauge"],
+    :prefix_set         => node["statsd"]["graphite"]["prefix_set"]
   )
   notifies :restart, "runit_service[statsd]"
 end

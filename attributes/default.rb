@@ -6,8 +6,11 @@ default["statsd"]["address"]                      = "0.0.0.0"
 default["statsd"]["port"]                         = 8125
 default["statsd"]["graphite_host"]                = "localhost"
 default["statsd"]["graphite_port"]                = 2003
+default["statsd"]["delete_idle_stats"]            = false
 default["statsd"]["delete_timers"]                = false
 default["statsd"]["delete_gauges"]                = false
+default["statsd"]["delete_sets"]                  = false
+default["statsd"]["delete_counters"]              = false
 default["statsd"]["username"]                     = "statsd"
 
 # Graphite storage config

@@ -29,6 +29,7 @@ template "#{node["statsd"]["conf_dir"]}/config.js" do
     :address            => node["statsd"]["address"],
     :port               => node["statsd"]["port"],
     :flush_interval     => node["statsd"]["flush_interval"],
+    :percent_threshold  => node["statsd"]["percent_threshold"],
     :graphite_port      => node["statsd"]["graphite_port"],
     :graphite_host      => graphite_host,
     :delete_idle_stats  => node["statsd"]["delete_idle_stats"],

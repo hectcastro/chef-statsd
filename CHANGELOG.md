@@ -1,3 +1,7 @@
+## v1.1.1
+
+* Added `percentThreshold` option to StatsD configuration.
+
 ## v1.1.0
 
 * Added auto-discovery for Graphite.

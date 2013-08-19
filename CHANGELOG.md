@@ -1,3 +1,7 @@
+## v1.1.2
+
+* Changed Git repository protocol to HTTPS.
+
 ## v1.1.1
 
 * Added `percentThreshold` option to StatsD configuration.

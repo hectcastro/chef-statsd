@@ -1,3 +1,7 @@
+## v1.1.3
+
+* Add `reference` attribute to specify StatsD versions.
+
 ## v1.1.2
 
 * Changed Git repository protocol to HTTPS.

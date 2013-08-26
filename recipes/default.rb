@@ -4,6 +4,7 @@ include_recipe "runit"
 
 git node["statsd"]["dir"] do
   repository node["statsd"]["repository"]
+  reference node["statsd"]["revision"]
   action :sync
   notifies :restart, "runit_service[statsd]"
 end

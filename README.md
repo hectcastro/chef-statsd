@@ -24,6 +24,7 @@ Installs and configures StatsD.
 * `node["statsd"]["dir"]` - Directory to install into.
 * `node["statsd"]["conf_dir"]` - Directory for StatsD configuration.
 * `node["statsd"]["repository"]` - Reference to a StatsD repository.
+* `node["statsd"]["revision"]` - Revision of repository to checkout.
 * `node["statsd"]["log_file"]` - Path to the StatsD log file.
 * `node["statsd"]["flush_interval"]` - Flush interval in milliseconds.
 * `node["statsd"]["percent_threshold"]` - Nth percentile value(s). Single value or array.

@@ -6,7 +6,7 @@ git node["statsd"]["dir"] do
   repository node["statsd"]["repository"]
   reference node["statsd"]["reference"]
   action :sync
-  notifies :restart, "runit_service[statsd]"
+  notifies :restart, "service[statsd]", :delayed
 end
 
 directory node["statsd"]["conf_dir"] do
@@ -45,7 +45,7 @@ template "#{node["statsd"]["conf_dir"]}/config.js" do
     :prefix_gauge       => node["statsd"]["graphite"]["prefix_gauge"],
     :prefix_set         => node["statsd"]["graphite"]["prefix_set"]
   )
-  notifies :restart, "runit_service[statsd]"
+  notifies :restart, "service[statsd]", :delayed
 end
 
 user node["statsd"]["username"] do

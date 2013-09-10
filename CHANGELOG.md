@@ -1,3 +1,8 @@
+## v1.1.4
+
+* Fixed hardcoded path to `node` within runit.
+* Fix reference to runit service and delay notification.
+
 ## v1.1.3
 
 * Add `reference` attribute to specify StatsD versions.

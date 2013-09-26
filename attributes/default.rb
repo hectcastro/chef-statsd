@@ -1,6 +1,6 @@
 default["statsd"]["dir"]                          = "/usr/share/statsd"
 default["statsd"]["conf_dir"]                     = "/etc/statsd"
-default["statsd"]["repository"]                   = "http://github.com/etsy/statsd.git"
+default["statsd"]["repository"]                   = "https://github.com/etsy/statsd.git"
 default["statsd"]["reference"]                    = "master"
 default["statsd"]["flush_interval"]               = 10000
 default["statsd"]["percent_threshold"]            = 90

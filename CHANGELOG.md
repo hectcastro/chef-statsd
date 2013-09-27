@@ -1,3 +1,7 @@
+## v1.1.5
+
+* Fixed issue with non-HTTPS Git repository was triggering an error on RHEL.
+
 ## v1.1.4
 
 * Fixed hardcoded path to `node` within runit.

@@ -44,8 +44,10 @@ Installs and configures StatsD.
   inactive sets (default: `false`).
 * `node["statsd"]["delete_counters"]` - Don't send values to graphite for
   inactive counters (default: `false`).
-* `node["statsd"]["username"]` - Will be used for process supervision (default: `stasd` )
-
+* `node["statsd"]["username"]` - Will be used for process supervision
+  (default: `stasd` )
+* `node["statsd"]["dump_messages"]` - Print debugging information on incoming
+  messages (default: `false`).
 * `node["statsd"]["graphite"]["legacy_namespace"]` - Flag to use legacy
   namespace (default: `true`).
 * `node["statsd"]["graphite"]["global_prefix"]` - Global prefix to use for

@@ -1,3 +1,8 @@
+## v1.1.6
+
+* Add attribute for `dumpMessages` configuration setting.
+* Update CentOS tests to CentOS 6.5.
+
 ## v1.1.5
 
 * Fixed issue with non-HTTPS Git repository was triggering an error on RHEL.

@@ -50,6 +50,8 @@ Installs and configures StatsD.
   namespace (default: `true`).
 * `node["statsd"]["graphite"]["global_prefix"]` - Global prefix to use for
   sending stats to Graphite (default: `stats`).
+* `node["statsd"]["graphite"]["global_suffix"]` - Global suffix to use for
+  sending stats to Graphite (default: ``).
 * `node["statsd"]["graphite"]["prefix_counter"]` - Graphite prefix for counter
   metrics (default: `counters`).
 * `node["statsd"]["graphite"]["prefix_timer"]` - Graphite prefix for timer

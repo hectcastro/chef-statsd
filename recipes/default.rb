@@ -40,6 +40,7 @@ template "#{node["statsd"]["conf_dir"]}/config.js" do
     :delete_counters    => node["statsd"]["delete_counters"],
     :legacy_namespace   => node["statsd"]["graphite"]["legacy_namespace"],
     :global_prefix      => node["statsd"]["graphite"]["global_prefix"],
+    :global_suffix      => node["statsd"]["graphite"]["global_suffix"],
     :prefix_counter     => node["statsd"]["graphite"]["prefix_counter"],
     :prefix_timer       => node["statsd"]["graphite"]["prefix_timer"],
     :prefix_gauge       => node["statsd"]["graphite"]["prefix_gauge"],
@@ -60,6 +61,6 @@ runit_service "statsd" do
     :user => node['statsd']['username'],
     :statsd_dir => node['statsd']['dir'],
     :conf_dir => node['statsd']['conf_dir'],
-    :nodejs_dir => node['nodejs']['dir']                    
+    :nodejs_dir => node['nodejs']['dir']
   })
 end

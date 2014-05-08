@@ -1,3 +1,7 @@
+## v1.1.7
+
+* Add attribute for `globalSuffix` configuration settings.
+
 ## v1.1.6
 
 * Add attribute for `dumpMessages` configuration setting.

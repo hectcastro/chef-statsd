@@ -1,19 +1,21 @@
 ---
-driver_plugin: vagrant
+driver:
+  name: vagrant
+  require_chef_omnibus: true
+  customize:
+    memory: 512
+
+provisioner:
+  name: chef_zero
 
 platforms:
 - name: ubuntu-12.04
-  driver_config:
-    box: opscode-ubuntu-12.04
-    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-12.04_chef-provisionerless.box
-    customize:
-      memory: 512
+  run_list:
+  - recipe[apt]
 - name: centos-6.5
-  driver_config:
-    box: opscode-centos-6.5
-    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.5_chef-provisionerless.box
-    customize:
-      memory: 512
+  run_list:
+  - recipe[yum]
+
 suites:
 - name: default
   run_list:

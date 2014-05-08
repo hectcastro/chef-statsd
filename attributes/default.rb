@@ -21,6 +21,7 @@ default["statsd"]["dump_messages"]                = false
 # Graphite storage config
 default["statsd"]["graphite"]["legacy_namespace"] = true
 default["statsd"]["graphite"]["global_prefix"]    = "stats"
+default["statsd"]["graphite"]["global_suffix"]    = ""
 default["statsd"]["graphite"]["prefix_counter"]   = "counters"
 default["statsd"]["graphite"]["prefix_timer"]     = "timers"
 default["statsd"]["graphite"]["prefix_gauge"]     = "gauges"

@@ -1,3 +1,7 @@
+## v1.1.8
+
+* Ensure `globalSuffix` is `undefined` when not used.
+
 ## v1.1.7
 
 * Add attribute for `globalSuffix` configuration settings.

@@ -13,7 +13,11 @@
   "graphite": {
     "legacyNamespace": <%= @legacy_namespace %>,
     "globalPrefix": "<%= @global_prefix %>",
+<% if !@global_suffix.empty? %>
     "globalSuffix": "<%= @global_suffix %>",
+<% else %>
+    "globalSuffix": undefined,
+<% end %>
     "prefixCounter": "<%= @prefix_counter %>",
     "prefixTimer": "<%= @prefix_timer %>",
     "prefixGauge": "<%= @prefix_gauge %>",

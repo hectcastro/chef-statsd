@@ -15,12 +15,14 @@ end
 
 graphite_host = node['statsd']['graphite_host']
 
-unless Chef::Config[:solo]
+if graphite_host.nil? and not Chef::Config[:solo]
   graphite_results = search(:node, node['statsd']['graphite_query'])
 
   unless graphite_results.empty?
     graphite_host = graphite_results[0]['ipaddress']
   end
+else
+  graphite_host = '127.0.0.1'
 end
 
 template "#{node["statsd"]["conf_dir"]}/config.js" do

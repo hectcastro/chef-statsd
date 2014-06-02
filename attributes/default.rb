@@ -26,3 +26,6 @@ default["statsd"]["graphite"]["prefix_counter"]   = "counters"
 default["statsd"]["graphite"]["prefix_timer"]     = "timers"
 default["statsd"]["graphite"]["prefix_gauge"]     = "gauges"
 default["statsd"]["graphite"]["prefix_set"]       = "sets"
+
+# nodejs
+default["statsd"]["nodejs_bin"] = "#{node["nodejs"]["dir"]}/bin/node"

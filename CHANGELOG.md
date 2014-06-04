@@ -1,3 +1,7 @@
+## v1.1.9
+
+* Add `nodejs_bin` attribute to explicitly point to a Node.js binary.
+
 ## v1.1.8
 
 * Ensure `globalSuffix` is `undefined` when not used.

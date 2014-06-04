@@ -62,6 +62,6 @@ runit_service "statsd" do
     :user => node['statsd']['username'],
     :statsd_dir => node['statsd']['dir'],
     :conf_dir => node['statsd']['conf_dir'],
-    :nodejs_dir => node['nodejs']['dir']
+    :nodejs_bin => node['statsd']['nodejs_bin']
   })
 end

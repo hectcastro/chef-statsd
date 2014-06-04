@@ -1,4 +1,4 @@
 #!/bin/sh
 exec 2>&1
-exec chpst -u <%= @options[:user] %> <%= @options[:nodejs_dir] %>/bin/node <%= @options[:statsd_dir] %>/stats.js <%= @options[:conf_dir] %>/config.js
+exec chpst -u <%= @options[:user] %> <%= @options[:nodejs_bin] %> <%= @options[:statsd_dir] %>/stats.js <%= @options[:conf_dir] %>/config.js
 

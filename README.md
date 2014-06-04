@@ -45,7 +45,7 @@ Installs and configures StatsD.
 * `node["statsd"]["delete_counters"]` - Don't send values to graphite for
   inactive counters (default: `false`).
 * `node["statsd"]["username"]` - Will be used for process supervision
-  (default: `stasd` )
+  (default: `stasd`).
 * `node["statsd"]["dump_messages"]` - Print debugging information on incoming
   messages (default: `false`).
 * `node["statsd"]["graphite"]["legacy_namespace"]` - Flag to use legacy
@@ -62,6 +62,8 @@ Installs and configures StatsD.
   metrics (default: `gauges`).
 * `node["statsd"]["graphite"]["prefix_set"]` - Graphite prefix for set
   metrics (default: `sets`).
+* `node["statsd"]["nodejs_bin"]` - Specify a direct path to the Node.js binary
+  (default: `#{node["nodejs"]["dir"]}/bin/node`).
 
 ## Recipes
 

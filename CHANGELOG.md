@@ -1,3 +1,7 @@
+## v1.1.10
+
+* Ensure that the `dumpMessages` configuration setting is a boolean.
+
 ## v1.1.9
 
 * Add `nodejs_bin` attribute to explicitly point to a Node.js binary.

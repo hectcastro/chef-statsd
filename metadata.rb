@@ -10,6 +10,6 @@ name              "statsd"
   depends d
 end
 
-%w{ ubuntu rhel scientific redhat centos amazon}.each do |os|
+%w{ debian ubuntu rhel scientific redhat centos amazon}.each do |os|
   supports os
 end

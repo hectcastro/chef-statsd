@@ -30,6 +30,8 @@ Installs and configures StatsD.
 * `node["statsd"]["percent_threshold"]` - Nth percentile value(s). Single value or array.
 * `node["statsd"]["address"]` - Address to bind StatsD to.
 * `node["statsd"]["port"]` - Port to run StatsD on.
+* `node["statsd"]["mgmt_address"]` - Address to bind the admin interface to.
+* `node["statsd"]["mgmt_port"]` - Port to run the admin interface on.
 * `node["statsd"]["graphite_host"]` - Graphite host.
 * `node["statsd"]["graphite_port"]` - Graphite port.
 * `node["statsd"]["graphite_role"]` - Graphite role for automatic discovery.

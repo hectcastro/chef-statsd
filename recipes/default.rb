@@ -47,7 +47,7 @@ template "#{node["statsd"]["conf_dir"]}/config.js" do
     :prefix_timer       => node["statsd"]["graphite"]["prefix_timer"],
     :prefix_gauge       => node["statsd"]["graphite"]["prefix_gauge"],
     :prefix_set         => node["statsd"]["graphite"]["prefix_set"],
-    :debug              => node["statsd"]["debug"]
+    :debug              => node["statsd"]["debug"],
     :dump_messages      => node["statsd"]["dump_messages"]
   )
   notifies :restart, "service[statsd]", :delayed

@@ -1,3 +1,7 @@
+## v1.1.11
+
+* Add support for supplying `mgmt_address` and `mgmt_port`.
+
 ## v1.1.10
 
 * Ensure that the `dumpMessages` configuration setting is a boolean.

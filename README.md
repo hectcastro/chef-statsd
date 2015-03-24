@@ -47,7 +47,9 @@ Installs and configures StatsD.
 * `node["statsd"]["delete_counters"]` - Don't send values to graphite for
   inactive counters (default: `false`).
 * `node["statsd"]["username"]` - Will be used for process supervision
-  (default: `stasd`).
+  (default: `statsd`).
+* `node["statsd"]["debug"]` - Log exceptions and print out more diagnostic
+  info (default: `false`).
 * `node["statsd"]["dump_messages"]` - Print debugging information on incoming
   messages (default: `false`).
 * `node["statsd"]["graphite"]["legacy_namespace"]` - Flag to use legacy

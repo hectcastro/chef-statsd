@@ -18,6 +18,7 @@ default["statsd"]["delete_gauges"]                = false
 default["statsd"]["delete_sets"]                  = false
 default["statsd"]["delete_counters"]              = false
 default["statsd"]["username"]                     = "statsd"
+default["statsd"]["debug"]                        = false
 default["statsd"]["dump_messages"]                = false
 
 # Graphite storage config

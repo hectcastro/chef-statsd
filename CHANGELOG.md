@@ -1,3 +1,7 @@
+## v1.1.12
+
+* Add support for `debug` setting.
+
 ## v1.1.11
 
 * Add support for supplying `mgmt_address` and `mgmt_port`.

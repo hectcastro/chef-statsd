@@ -6,7 +6,7 @@ git node["statsd"]["dir"] do
   repository node["statsd"]["repository"]
   reference node["statsd"]["reference"]
   action :sync
-  notifies :restart, "service[statsd]", :delayed
+  notifies :restart, "poise_service[statsd]", :delayed
 end
 
 directory node["statsd"]["conf_dir"] do
@@ -50,7 +50,7 @@ template "#{node["statsd"]["conf_dir"]}/config.js" do
     :debug              => node["statsd"]["debug"],
     :dump_messages      => node["statsd"]["dump_messages"]
   )
-  notifies :restart, "service[statsd]", :delayed
+  notifies :restart, "poise_service[statsd]", :delayed
 end
 
 user node["statsd"]["username"] do
@@ -58,13 +58,8 @@ user node["statsd"]["username"] do
   shell "/bin/false"
 end
 
-runit_service "statsd" do
-  action [:enable, :start]
-  default_logger true
-  options ({
-    :user => node['statsd']['username'],
-    :statsd_dir => node['statsd']['dir'],
-    :conf_dir => node['statsd']['conf_dir'],
-    :nodejs_bin => node['statsd']['nodejs_bin']
-  })
+poise_service 'statsd' do
+  provider :runit
+  user node['statsd']['username']
+  command "#{node['statsd']['nodejs_bin']} #{node['statsd']['dir']}/stats.js #{node['statsd']['conf_dir']}/config.js"
 end

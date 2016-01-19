@@ -6,10 +6,10 @@ version           "1.1.12"
 recipe            "statsd", "Installs and configures StatsD"
 name              "statsd"
 
-%w{ git nodejs runit }.each do |d|
+%w(git nodejs poise-service-runit).each do |d|
   depends d
 end
 
-%w{ debian ubuntu rhel scientific redhat centos amazon}.each do |os|
+%w(debian ubuntu rhel scientific redhat centos amazon).each do |os|
   supports os
 end
